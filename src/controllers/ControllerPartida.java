@@ -26,4 +26,29 @@ public class ControllerPartida {
         
         return daoPartida.create(comando, parametros);
     }
+    
+    public ArrayList<Partida> getByData(String data){
+        data = "%".concat(data);
+        data = data.concat("%");
+        System.out.println(data);
+        DaoPartida dp = new DaoPartida();
+        ArrayList<Partida> partidas = new ArrayList();
+        ArrayList<String> parametros = new ArrayList();
+        parametros.add(data);
+        
+        String comando = "SELECT * FROM partida where data like ?";
+        partidas = dp.get(comando, parametros);
+        
+        return partidas;
+    }
+    
+    public ArrayList<Partida> getEquipe(Equipe equipe){
+        DaoPartida dp = new DaoPartida();
+        ArrayList<String> parametros = new ArrayList();
+        parametros.add(equipe.getId().toString());
+        parametros.add(equipe.getId().toString());
+        System.out.println(equipe.getId());
+        String comando = "SELECT * FROM partida WHERE fk_equipe1 = ? or fk_equipe2 = ?;";
+        return dp.get(comando, parametros);
+    }
 }

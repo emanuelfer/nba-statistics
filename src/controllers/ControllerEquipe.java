@@ -38,4 +38,18 @@ public class ControllerEquipe {
         String comando = "SELECT * FROM equipe where franquia like ?";
         return daoEquipe.get(comando, parametro);
     }
+    
+    public Equipe getById(String id){
+        DaoEquipe daoEquipe = new DaoEquipe();
+        String comando = "SELECT * FROM equipe where id = ?";
+        return daoEquipe.get(comando, id);
+    }
+    
+    public Equipe getByName(String franquia){
+        franquia = "%"+franquia+"%";
+        DaoEquipe daoEquipe = new DaoEquipe();
+        String comando = "SELECT * FROM equipe where franquia like ? LIMIT 1";
+        return daoEquipe.get(comando, franquia);
+    }
+    
 }

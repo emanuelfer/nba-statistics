@@ -12,20 +12,44 @@ import java.util.ArrayList;
  * @author emanu
  */
 public class Jogador {
+    private Integer id;
     private String nome;
+    private Equipe equipe;
     private String cpf;
     private String posicao;
     private Integer idade;
     private Double altura;
     private Double peso;
 
-    public Jogador(String nome, String cpf, String posicao, Integer idade, Double altura, Double peso) {
+    public Jogador(Integer id, String nome, Equipe equipe, String cpf, String posicao, Integer idade, Double altura, Double peso) {
+        this.id = id;
         this.nome = nome;
+        this.equipe = equipe;
         this.cpf = cpf;
         this.posicao = posicao;
         this.idade = idade;
         this.altura = altura;
         this.peso = peso;
+    }
+    
+    public Jogador(String nome, Equipe equipe, String cpf, String posicao, Integer idade, Double altura, Double peso) {
+        this.nome = nome;
+        this.equipe = equipe;
+        this.cpf = cpf;
+        this.posicao = posicao;
+        this.idade = idade;
+        this.altura = altura;
+        this.peso = peso;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+    
+    
+
+    public Equipe getEquipe() {
+        return equipe;
     }
 
     public String getNome() {
@@ -57,6 +81,7 @@ public class Jogador {
     public ArrayList<String> toArrayList(){
         ArrayList<String> atributos = new ArrayList();
         atributos.add(this.nome);
+        atributos.add(this.equipe.getId().toString());
         atributos.add(this.cpf);
         atributos.add(this.posicao);
         atributos.add(this.idade.toString());

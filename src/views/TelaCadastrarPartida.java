@@ -39,6 +39,7 @@ public class TelaCadastrarPartida extends javax.swing.JInternalFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -56,42 +57,87 @@ public class TelaCadastrarPartida extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setTitle("Cadastrar Partida");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("Franquia");
         jLabel1.setAlignmentX(0.5F);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 26, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 12;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(26, 18, 0, 0);
+        getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setText("Franquia");
         jLabel3.setAlignmentX(0.5F);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 26, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(26, 10, 0, 0);
+        getContentPane().add(jLabel3, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setText("Pontos");
         jLabel4.setAlignmentX(0.5F);
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 97, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(23, 10, 0, 0);
+        getContentPane().add(jLabel4, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setText("Pontos");
         jLabel5.setAlignmentX(0.5F);
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 99, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(25, 18, 0, 0);
+        getContentPane().add(jLabel5, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setText("Local");
         jLabel2.setAlignmentX(0.5F);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 156, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(29, 11, 0, 0);
+        getContentPane().add(jLabel2, gridBagConstraints);
 
         txtLocalPartida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLocalPartidaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtLocalPartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 184, 336, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 20;
+        gridBagConstraints.ipadx = 330;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 30, 0, 0);
+        getContentPane().add(txtLocalPartida, gridBagConstraints);
 
         spnPontosTime1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        getContentPane().add(spnPontosTime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 95, 66, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipadx = 35;
+        gridBagConstraints.ipady = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(21, 10, 0, 0);
+        getContentPane().add(spnPontosTime1, gridBagConstraints);
 
         btnCadastrarParida.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnCadastrarParida.setText("Cadastrar");
@@ -100,14 +146,43 @@ public class TelaCadastrarPartida extends javax.swing.JInternalFrame {
                 btnCadastrarParidaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCadastrarParida, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 251, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(47, 49, 23, 0);
+        getContentPane().add(btnCadastrarParida, gridBagConstraints);
 
-        getContentPane().add(cmbEquipe2, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 54, 173, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 33;
+        gridBagConstraints.ipadx = 145;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 18, 0, 16);
+        getContentPane().add(cmbEquipe2, gridBagConstraints);
 
-        getContentPane().add(cmbEquipe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 54, 187, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 159;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 0);
+        getContentPane().add(cmbEquipe1, gridBagConstraints);
 
         spnPontosTime2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        getContentPane().add(spnPontosTime2, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 97, 66, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 19;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 21;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.ipadx = 35;
+        gridBagConstraints.ipady = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(23, 31, 0, 16);
+        getContentPane().add(spnPontosTime2, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

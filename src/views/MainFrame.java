@@ -46,6 +46,12 @@ public class MainFrame extends javax.swing.JFrame {
         menuCadastrarJogador = new javax.swing.JMenuItem();
         menuCadastrarEquipe = new javax.swing.JMenuItem();
         menuCadastrarPartida = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        btnEstatisticaJogador = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        btnBuscarJogador = new javax.swing.JMenuItem();
+        menuBuscarEquipe = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -91,6 +97,42 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu7);
 
+        jMenu2.setText("Estatística");
+
+        jMenu3.setText("Cadastrar");
+
+        btnEstatisticaJogador.setText("Jogador");
+        btnEstatisticaJogador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstatisticaJogadorActionPerformed(evt);
+            }
+        });
+        jMenu3.add(btnEstatisticaJogador);
+
+        jMenu2.add(jMenu3);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu8.setText("Buscar");
+
+        btnBuscarJogador.setText("Jogador");
+        btnBuscarJogador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarJogadorActionPerformed(evt);
+            }
+        });
+        jMenu8.add(btnBuscarJogador);
+
+        menuBuscarEquipe.setText("Equipe");
+        menuBuscarEquipe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuBuscarEquipeActionPerformed(evt);
+            }
+        });
+        jMenu8.add(menuBuscarEquipe);
+
+        jMenuBar1.add(jMenu8);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -116,6 +158,27 @@ public class MainFrame extends javax.swing.JFrame {
         telaPartida.setVisible(true);
         this.add(telaPartida);
     }//GEN-LAST:event_menuCadastrarPartidaActionPerformed
+
+    private void btnEstatisticaJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstatisticaJogadorActionPerformed
+        // TODO add your handling code here:
+        TelaCadastrarEstatisticaJogador t = new TelaCadastrarEstatisticaJogador(this);
+        t.setVisible(true);
+        this.add(t);
+    }//GEN-LAST:event_btnEstatisticaJogadorActionPerformed
+
+    private void btnBuscarJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarJogadorActionPerformed
+        // TODO add your handling code here:
+        TelaBuscarJogador buscarJogador = new TelaBuscarJogador(this);
+        buscarJogador.setVisible(true);
+        this.add(buscarJogador);
+    }//GEN-LAST:event_btnBuscarJogadorActionPerformed
+
+    private void menuBuscarEquipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuBuscarEquipeActionPerformed
+        // TODO add your handling code here:
+        TelaBuscarEquipe buscarEquipe = new TelaBuscarEquipe(this);
+        buscarEquipe.setVisible(true);
+        this.add(buscarEquipe);
+    }//GEN-LAST:event_menuBuscarEquipeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,7 +217,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     public void popUP(String mensagem){
-        System.out.println("sucesso ao cadaastrar!");
         JDialog jdialog = new JDialog(this, true);
         jdialog.setSize(200, 200);
         jdialog.setLayout(new FlowLayout());
@@ -165,15 +227,21 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem btnBuscarJogador;
+    private javax.swing.JMenuItem btnEstatisticaJogador;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JMenuItem menuBuscarEquipe;
     private javax.swing.JMenuItem menuCadastrarEquipe;
     private javax.swing.JMenuItem menuCadastrarJogador;
     private javax.swing.JMenuItem menuCadastrarPartida;
