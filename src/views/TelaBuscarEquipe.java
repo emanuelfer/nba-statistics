@@ -10,6 +10,7 @@ import controllers.ControllerEstatistica;
 import controllers.ControllerJogador;
 import controllers.ControllerPartida;
 import java.awt.Color;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import models.Equipe;
 import models.EstatisticaJogador;
@@ -67,6 +68,17 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
         txtVitorias1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         txtDerrotas1 = new javax.swing.JLabel();
+        txtPontos = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txtPontos1 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        txtNome = new javax.swing.JLabel();
+        txtNome1 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        btnSalvarArquivo = new javax.swing.JButton();
+        txtArquivo = new javax.swing.JTextField();
 
         setClosable(true);
         setMaximizable(true);
@@ -158,77 +170,139 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
         txtDerrotas1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtDerrotas1.setText("None");
 
+        txtPontos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtPontos.setText("None");
+
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel15.setText("Média de pontos:");
+
+        txtPontos1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtPontos1.setText("None");
+
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel16.setText("Média de pontos:");
+
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel17.setText("Nome");
+
+        txtNome.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtNome.setText("None");
+
+        txtNome1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtNome1.setText("None");
+
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel18.setText("Nome:");
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel1.setText("Salvar comparação:");
+
+        btnSalvarArquivo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnSalvarArquivo.setText("Salvar");
+        btnSalvarArquivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarArquivoActionPerformed(evt);
+            }
+        });
+
+        txtArquivo.setText("arquivo.csv");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(txtFranquia, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)
-                        .addComponent(btnBuscarFranquia)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(txtConferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(txtPartidas))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(txtVitorias))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel8)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(txtDerrotas))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel15)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(txtPontos)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(txtFranquia, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addComponent(btnBuscarFranquia))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)))
                         .addGap(57, 57, 57)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPartidas))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDerrotas))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCidade))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVitorias))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtConferencia))))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(txtFranquia1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(6, 6, 6)
-                        .addComponent(btnBuscarFranquia1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(txtFranquia1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addComponent(btnBuscarFranquia1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtCidade1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtConferencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtPartidas1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtVitorias1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtDerrotas1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtPontos1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel11)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPartidas1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
+                        .addComponent(txtArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDerrotas1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCidade1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel14)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVitorias1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel13)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtConferencia1))))
-                .addGap(31, 31, 31))
+                        .addComponent(btnSalvarArquivo)
+                        .addGap(137, 137, 137)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(11, 11, 11)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -245,48 +319,68 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
                             .addComponent(btnBuscarFranquia, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnBuscarFranquia1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtNome)
+                        .addComponent(jLabel17))
+                    .addComponent(jLabel18)
+                    .addComponent(txtNome1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(txtCidade))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(txtConferencia))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
                             .addComponent(txtPartidas))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(txtVitorias))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
-                            .addComponent(txtDerrotas)))
+                            .addComponent(txtDerrotas))
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(txtPontos)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
                             .addComponent(txtCidade1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
                             .addComponent(txtConferencia1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
                             .addComponent(txtPartidas1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
                             .addComponent(txtVitorias1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
-                            .addComponent(txtDerrotas1))))
-                .addContainerGap())
+                            .addComponent(txtDerrotas1))
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(txtPontos1))))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnSalvarArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -300,26 +394,32 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
 
         Integer numPartidas = partidas.size();
         Integer vitorias=0, derrotas = 0;
+        Double mediaPontos=0.0;
         
         for(Partida p : partidas){
             if(p.getEquipe1().getId() == equipe.getId()){
+                mediaPontos+=p.getPontosEquipe1();
                 if(p.getPontosEquipe1() > p.getPontosEquipe2()){
                     vitorias++;
                 }
             }else if(p.getEquipe2().getId() == equipe.getId()){
+                mediaPontos+=p.getPontosEquipe2();
                 if(p.getPontosEquipe2() > p.getPontosEquipe1()){
                     vitorias++;
                 }
             }
         }
+        mediaPontos = mediaPontos/numPartidas;
         
         derrotas = numPartidas - vitorias;
         
+        txtNome.setText(equipe.getFranquia());
         txtCidade.setText(equipe.getCidade());
         txtConferencia.setText(equipe.getConferencia());
         txtPartidas.setText(numPartidas.toString());
         txtVitorias.setText(vitorias.toString());
         txtDerrotas.setText(derrotas.toString());
+        txtPontos.setText(String.format("%.2f", mediaPontos));
         this.changeColor();
     }//GEN-LAST:event_btnBuscarFranquiaActionPerformed
 
@@ -332,28 +432,61 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
 
         Integer numPartidas = partidas.size();
         Integer vitorias=0, derrotas = 0;
-        
+        Double mediaPontos = 0.0;
         for(Partida p : partidas){
             if(p.getEquipe1().getId() == equipe.getId()){
+                mediaPontos+=p.getPontosEquipe1();
                 if(p.getPontosEquipe1() > p.getPontosEquipe2()){
                     vitorias++;
                 }
             }else if(p.getEquipe2().getId() == equipe.getId()){
+                mediaPontos+=p.getPontosEquipe2();
                 if(p.getPontosEquipe2() > p.getPontosEquipe1()){
                     vitorias++;
                 }
             }
         }
+        mediaPontos = mediaPontos/numPartidas;
         
         derrotas = numPartidas - vitorias;
         
+        txtNome1.setText(equipe.getFranquia());
         txtCidade1.setText(equipe.getCidade());
         txtConferencia1.setText(equipe.getConferencia());
         txtPartidas1.setText(numPartidas.toString());
         txtVitorias1.setText(vitorias.toString());
         txtDerrotas1.setText(derrotas.toString());
+        txtPontos1.setText(String.format("%.2f", mediaPontos));
         this.changeColor();
     }//GEN-LAST:event_btnBuscarFranquia1ActionPerformed
+
+    private void btnSalvarArquivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarArquivoActionPerformed
+        // TODO add your handling code here:
+        String linha ,linha1, linha2;
+        ArrayList<String> linhas = new ArrayList();
+        linha = "Franquia;Cidade;Conferencia;Partidas;Vitorias;Derrotas;Media de pontos";
+        linhas.add(linha);
+        if(txtNome.getText() != null){
+            linha1 = txtNome.getText() +";"+txtCidade.getText()+";"+txtConferencia.getText()
+                    +";"+txtPartidas.getText()+";"+txtVitorias.getText()+";"+txtDerrotas.getText()
+                    +";"+txtPontos.getText();
+            linhas.add(linha1);
+        }
+        if(txtNome1.getText() != null){
+            linha2 = txtNome1.getText() +";"+txtCidade1.getText()+";"+txtConferencia1.getText()
+                    +";"+txtPartidas1.getText()+";"+txtVitorias1.getText()+";"+txtDerrotas1.getText()
+                    +";"+txtPontos1.getText();
+            linhas.add(linha2);
+        }
+        ControllerEstatistica ce = new ControllerEstatistica();
+        Boolean retorno = ce.salvar(linhas, txtArquivo.getText());
+        if(retorno){
+            this.desktop.popUP("Arquivo salvo com sucesso!");
+            this.dispose();
+        }else{
+            this.desktop.popUP("Erro ao salvar arquivo!");
+        }
+    }//GEN-LAST:event_btnSalvarArquivoActionPerformed
     
     public void changeColor(){
         try{
@@ -372,6 +505,14 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
                 txtDerrotas.setForeground(Color.red);
                 txtDerrotas1.setForeground(Color.GREEN);
             }
+            
+            if(Double.parseDouble(txtPontos.getText()) > Double.parseDouble(txtPontos1.getText())){
+                txtPontos.setForeground(Color.GREEN);
+                txtPontos1.setForeground(Color.red);
+            }else if(Double.parseDouble(txtPontos.getText()) < Double.parseDouble(txtPontos1.getText())){
+                txtPontos.setForeground(Color.red);
+                txtPontos1.setForeground(Color.GREEN);
+            }
         }catch(NumberFormatException e){
             
         }
@@ -381,11 +522,17 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarFranquia;
     private javax.swing.JButton btnBuscarFranquia1;
+    private javax.swing.JButton btnSalvarArquivo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -394,6 +541,7 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txtArquivo;
     private javax.swing.JLabel txtCidade;
     private javax.swing.JLabel txtCidade1;
     private javax.swing.JLabel txtConferencia;
@@ -402,8 +550,12 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
     private javax.swing.JLabel txtDerrotas1;
     private javax.swing.JTextField txtFranquia;
     private javax.swing.JTextField txtFranquia1;
+    private javax.swing.JLabel txtNome;
+    private javax.swing.JLabel txtNome1;
     private javax.swing.JLabel txtPartidas;
     private javax.swing.JLabel txtPartidas1;
+    private javax.swing.JLabel txtPontos;
+    private javax.swing.JLabel txtPontos1;
     private javax.swing.JLabel txtVitorias;
     private javax.swing.JLabel txtVitorias1;
     // End of variables declaration//GEN-END:variables

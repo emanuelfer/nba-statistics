@@ -39,6 +39,27 @@ public class ControllerJogador {
         parametros.add(cpf);
         String comando = "SELECT * FROM jogador WHERE cpf = ?";
         
-        return daoJogador.get(comando, parametros).get(0);
+        try{
+            return daoJogador.get(comando, parametros).get(0);
+        }catch(IndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
+    
+    public Jogador getJogadorByName(String nome){
+        nome = "%"+nome+"%";
+        DaoJogador daoJogador = new DaoJogador();
+        ArrayList<String> parametros = new ArrayList();
+        parametros.add(nome);
+        String comando = "SELECT * FROM jogador WHERE nome like ?";
+        
+        try{
+            return daoJogador.get(comando, parametros).get(0);
+        }catch(IndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+    
 }

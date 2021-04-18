@@ -7,6 +7,7 @@ package controllers;
 
 import dao.DaoEstatistica;
 import java.util.ArrayList;
+import files.Arquivo;
 import models.EstatisticaJogador;
 import models.Jogador;
 
@@ -28,5 +29,9 @@ public class ControllerEstatistica {
         String comando = "SELECT count(*) as partidas,sum(pontos) as pontos, sum(rebotes) as rebotes, sum(assistencias) as assistencias, sum(roubadas) as roubadas, sum(tocos) as tocos, sum(turnovers) as turnovers FROM estatistica_jogador WHERE fk_jogador = ?";
         
         return de.getEstatisticaJogador(comando, jogador.getId().toString());
+    }
+    
+    public boolean salvar(ArrayList<String> linhas, String arquivo){
+        return Arquivo.write(arquivo, linhas);
     }
 }

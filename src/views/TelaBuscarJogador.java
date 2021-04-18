@@ -10,6 +10,7 @@ import controllers.ControllerEstatistica;
 import controllers.ControllerJogador;
 import controllers.ControllerPartida;
 import java.awt.Color;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.util.ArrayList;
 import models.Equipe;
 import models.EstatisticaJogador;
@@ -40,7 +41,7 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtCpf = new javax.swing.JTextField();
+        txtProcuraNome = new javax.swing.JTextField();
         btnBuscarJogador = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -90,20 +91,22 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
         jLabel24 = new javax.swing.JLabel();
         txtRoubadas1 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        txtCpf1 = new javax.swing.JTextField();
+        txtProcuraNome1 = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         txtNumPartidas = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         txtNumPartidas1 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        btnSalvarArquivo = new javax.swing.JButton();
+        txtArquivo = new javax.swing.JTextField();
 
         setClosable(true);
+        setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Cadastrar Partida");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 40, 172, -1));
 
         btnBuscarJogador.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnBuscarJogador.setText("Buscar");
@@ -112,103 +115,78 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
                 btnBuscarJogadorActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBuscarJogador, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 39, -1, 20));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel1.setText("CPF:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 11, -1, -1));
+        jLabel1.setText("Salvar comparação:");
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("Nome:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 99, -1, -1));
 
         txtNome.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtNome.setText("None");
-        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 99, 136, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Posição:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 127, -1, -1));
 
         txtPosicao.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtPosicao.setText("None");
-        getContentPane().add(txtPosicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 127, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("Idade:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 155, -1, -1));
 
         txtIdade.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtIdade.setText("None");
-        getContentPane().add(txtIdade, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 155, -1, -1));
 
         txtAltura.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtAltura.setText("None");
-        getContentPane().add(txtAltura, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 183, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setText("Altura:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 183, -1, -1));
 
         txtPeso.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtPeso.setText("None");
-        getContentPane().add(txtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 212, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel9.setText("Peso:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 212, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel4.setText("X");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, 11, -1, -1));
 
         txtPontos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtPontos.setText("None");
-        getContentPane().add(txtPontos, new org.netbeans.lib.awtextra.AbsoluteConstraints(91, 268, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel11.setText("Pontos:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 268, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel12.setText("Rebotes:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 296, -1, -1));
 
         txtRebotes.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtRebotes.setText("None");
-        getContentPane().add(txtRebotes, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 296, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel13.setText("Assistências:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 324, -1, -1));
 
         txtAssistencias.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtAssistencias.setText("None");
-        getContentPane().add(txtAssistencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 324, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel14.setText("Roubadas:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 352, -1, -1));
 
         txtRoubadas.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtRoubadas.setText("None");
-        getContentPane().add(txtRoubadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 352, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel15.setText("Tocos:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 380, -1, -1));
 
         txtTocos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtTocos.setText("None");
-        getContentPane().add(txtTocos, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 380, -1, -1));
 
         txtTurnovers.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtTurnovers.setText("None");
-        getContentPane().add(txtTurnovers, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 408, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel16.setText("Turnovers:");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 408, -1, -1));
 
         btnBuscarJogador1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnBuscarJogador1.setText("Buscar");
@@ -217,132 +195,367 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
                 btnBuscarJogador1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBuscarJogador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 39, -1, 20));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel6.setText("CPF:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 11, -1, -1));
+        jLabel6.setText("Nome:");
 
         txtTocos1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtTocos1.setText("None");
-        getContentPane().add(txtTocos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 380, -1, -1));
 
         txtTurnovers1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtTurnovers1.setText("None");
-        getContentPane().add(txtTurnovers1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 408, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel17.setText("Turnovers:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 408, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setText("Nome:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 99, -1, -1));
 
         txtNome1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtNome1.setText("None");
-        getContentPane().add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 99, 136, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel10.setText("Posição:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 127, -1, -1));
 
         txtPosicao1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtPosicao1.setText("None");
-        getContentPane().add(txtPosicao1, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 127, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel18.setText("Idade:");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 155, -1, -1));
 
         txtIdade1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtIdade1.setText("None");
-        getContentPane().add(txtIdade1, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 155, -1, -1));
 
         txtAltura1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtAltura1.setText("None");
-        getContentPane().add(txtAltura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 183, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel19.setText("Altura:");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 183, -1, -1));
 
         txtPeso1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtPeso1.setText("None");
-        getContentPane().add(txtPeso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 212, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel20.setText("Peso:");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 212, -1, -1));
 
         txtPontos1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtPontos1.setText("None");
-        getContentPane().add(txtPontos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 268, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel21.setText("Pontos:");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 268, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel22.setText("Rebotes:");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 296, -1, -1));
 
         txtRebotes1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtRebotes1.setText("None");
-        getContentPane().add(txtRebotes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 296, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel23.setText("Assistências:");
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 324, -1, -1));
 
         txtAssistencias1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtAssistencias1.setText("None");
-        getContentPane().add(txtAssistencias1, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 324, -1, -1));
 
         jLabel24.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel24.setText("Roubadas:");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 352, -1, -1));
 
         txtRoubadas1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtRoubadas1.setText("None");
-        getContentPane().add(txtRoubadas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(507, 352, -1, -1));
 
         jLabel25.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel25.setText("Tocos:");
-        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 380, -1, -1));
-        getContentPane().add(txtCpf1, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 40, 172, -1));
 
         jLabel26.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel26.setText("N. Partidas:");
-        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 71, -1, -1));
 
         txtNumPartidas.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtNumPartidas.setText("None");
-        getContentPane().add(txtNumPartidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 71, 136, -1));
 
         jLabel27.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel27.setText("N. Partidas:");
-        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 71, -1, -1));
 
         txtNumPartidas1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtNumPartidas1.setText("None");
-        getContentPane().add(txtNumPartidas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 71, 136, -1));
 
         jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel28.setText("Médias por jogo:");
-        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 240, -1, -1));
 
         jLabel29.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel29.setText("Médias por jogo:");
-        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 240, -1, -1));
+
+        jLabel30.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel30.setText("Nome:");
+
+        btnSalvarArquivo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnSalvarArquivo.setText("Salvar");
+        btnSalvarArquivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarArquivoActionPerformed(evt);
+            }
+        });
+
+        txtArquivo.setText("arquivo.csv");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTocos, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(260, 260, 260)
+                        .addComponent(jLabel25)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtTocos1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTurnovers, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(250, 250, 250)
+                        .addComponent(jLabel17)
+                        .addGap(6, 6, 6)
+                        .addComponent(txtTurnovers1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnSalvarArquivo)
+                            .addGap(39, 39, 39))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel14)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtRoubadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel13)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtAssistencias, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(223, 223, 223)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel23)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(txtAssistencias1))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel24)
+                                    .addGap(6, 6, 6)
+                                    .addComponent(txtRoubadas1)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPeso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(289, 289, 289)
+                                .addComponent(jLabel18)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtIdade1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(288, 288, 288)
+                                .addComponent(jLabel19)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtAltura1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(288, 288, 288)
+                                .addComponent(jLabel20)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtPeso1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtRebotes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPontos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel28))
+                        .addGap(277, 277, 277)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel29)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtPontos1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtRebotes1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtProcuraNome, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(btnBuscarJogador))
+                                    .addComponent(jLabel30))
+                                .addGap(57, 57, 57)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel2)
+                                .addGap(10, 10, 10)
+                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPosicao, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addGap(10, 10, 10)
+                                .addComponent(txtNumPartidas, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addGap(10, 10, 10)
+                                .addComponent(txtNumPartidas1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(10, 10, 10)
+                                .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(6, 6, 6)
+                                .addComponent(txtPosicao1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(txtProcuraNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addComponent(btnBuscarJogador1)))))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtProcuraNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(7, 7, 7)
+                        .addComponent(txtProcuraNome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnBuscarJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscarJogador1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26)
+                    .addComponent(txtNumPartidas)
+                    .addComponent(jLabel27)
+                    .addComponent(txtNumPartidas1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNome)
+                    .addComponent(jLabel8)
+                    .addComponent(txtNome1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(txtPosicao)
+                    .addComponent(jLabel10)
+                    .addComponent(txtPosicao1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(txtIdade)
+                    .addComponent(jLabel18)
+                    .addComponent(txtIdade1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(txtAltura)
+                    .addComponent(jLabel19)
+                    .addComponent(txtAltura1))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(txtPeso)
+                    .addComponent(jLabel20)
+                    .addComponent(txtPeso1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel29))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(txtPontos)
+                    .addComponent(jLabel21)
+                    .addComponent(txtPontos1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(txtRebotes)
+                    .addComponent(jLabel22)
+                    .addComponent(txtRebotes1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(txtAssistencias)
+                    .addComponent(jLabel23)
+                    .addComponent(txtAssistencias1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(txtRoubadas)
+                    .addComponent(jLabel24)
+                    .addComponent(txtRoubadas1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15)
+                    .addComponent(txtTocos)
+                    .addComponent(jLabel25)
+                    .addComponent(txtTocos1))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(txtTurnovers)
+                    .addComponent(jLabel17)
+                    .addComponent(txtTurnovers1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnSalvarArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtArquivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarJogadorActionPerformed
         ControllerJogador cj = new ControllerJogador();
-        String cpf = txtCpf.getText();
-        Jogador jogador = cj.getJogadorByCpf(cpf);
+        String nome = txtProcuraNome.getText();
+        Jogador jogador = cj.getJogadorByName(nome);
         txtNome.setText(jogador.getNome());
         txtPosicao.setText(jogador.getPosicao());
         txtIdade.setText(jogador.getIdade().toString() + " anos");
@@ -375,8 +588,8 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
     private void btnBuscarJogador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarJogador1ActionPerformed
         // TODO add your handling code here:
         ControllerJogador cj = new ControllerJogador();
-        String cpf = txtCpf1.getText();
-        Jogador jogador = cj.getJogadorByCpf(cpf);
+        String nome1 = txtProcuraNome1.getText();
+        Jogador jogador = cj.getJogadorByName(nome1);
         txtNome1.setText(jogador.getNome());
         txtPosicao1.setText(jogador.getPosicao());
         txtIdade1.setText(jogador.getIdade().toString() + " anos");
@@ -405,6 +618,38 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
         txtTurnovers1.setText(mediaTurnovers.toString());
         this.changeColor();
     }//GEN-LAST:event_btnBuscarJogador1ActionPerformed
+
+    private void btnSalvarArquivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarArquivoActionPerformed
+        // TODO add your handling code here:
+        String linha ,linha1, linha2;
+        ArrayList<String> linhas = new ArrayList();
+        linha = "Nome;Numero de Partidas;Posicao;Idade;Altura;Peso;Media de Pontos;Rebotes;Assistencias;Roubadas;Tocos;Turnovers";
+        linhas.add(linha);
+        if(txtNome.getText() != null){
+            linha1 = txtNome.getText() +";"+txtNumPartidas.getText()+";"+txtPosicao.getText()
+                    +";"+ txtIdade.getText()+";"+txtAltura.getText()+";"+txtPeso.getText()
+                    +";"+txtPontos.getText()+";"+txtRebotes.getText()
+                    +";"+txtAssistencias.getText()+";"+txtRoubadas.getText()+";"+txtTocos.getText()+";"+
+                    txtTurnovers.getText();
+            linhas.add(linha1);
+        }
+        if(txtNome1.getText() != null){
+            linha2 = txtNome1.getText() +";"+txtNumPartidas1.getText()+";"+txtPosicao1.getText()
+                    +";"+ txtIdade1.getText()+";"+txtAltura1.getText()+";"+txtPeso1.getText()
+                    +";"+txtPontos1.getText()+";"+txtRebotes1.getText()
+                    +";"+txtAssistencias1.getText()+";"+txtRoubadas1.getText()+";"+txtTocos1.getText()+";"+
+                    txtTurnovers1.getText();
+            linhas.add(linha2);
+        }
+        ControllerEstatistica ce = new ControllerEstatistica();
+        Boolean retorno = ce.salvar(linhas, txtArquivo.getText());
+        if(retorno){
+            this.desktop.popUP("Arquivo salvo com sucesso!");
+            this.dispose();
+        }else{
+            this.desktop.popUP("Erro ao salvar arquivo!");
+        }
+    }//GEN-LAST:event_btnSalvarArquivoActionPerformed
     
     public void changeColor(){
         
@@ -460,6 +705,7 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarJogador;
     private javax.swing.JButton btnBuscarJogador1;
+    private javax.swing.JButton btnSalvarArquivo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -483,6 +729,7 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -491,10 +738,9 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel txtAltura;
     private javax.swing.JLabel txtAltura1;
+    private javax.swing.JTextField txtArquivo;
     private javax.swing.JLabel txtAssistencias;
     private javax.swing.JLabel txtAssistencias1;
-    private javax.swing.JTextField txtCpf;
-    private javax.swing.JTextField txtCpf1;
     private javax.swing.JLabel txtIdade;
     private javax.swing.JLabel txtIdade1;
     private javax.swing.JLabel txtNome;
@@ -507,6 +753,8 @@ public class TelaBuscarJogador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel txtPontos1;
     private javax.swing.JLabel txtPosicao;
     private javax.swing.JLabel txtPosicao1;
+    private javax.swing.JTextField txtProcuraNome;
+    private javax.swing.JTextField txtProcuraNome1;
     private javax.swing.JLabel txtRebotes;
     private javax.swing.JLabel txtRebotes1;
     private javax.swing.JLabel txtRoubadas;

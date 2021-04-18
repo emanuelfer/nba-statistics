@@ -6,7 +6,13 @@
 package controllers;
 
 import dao.DaoPartida;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static javax.print.attribute.Size2DSyntax.MM;
 import models.Equipe;
 import models.Partida;
 
@@ -28,9 +34,18 @@ public class ControllerPartida {
     }
     
     public ArrayList<Partida> getByData(String data){
+        try {  
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+            Date d = sdf.parse(data);
+            sdf.applyPattern("yyyy-mm-dd");
+            data = sdf.format(d);
+
+        } catch (ParseException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
         data = "%".concat(data);
         data = data.concat("%");
-        System.out.println(data);
         DaoPartida dp = new DaoPartida();
         ArrayList<Partida> partidas = new ArrayList();
         ArrayList<String> parametros = new ArrayList();

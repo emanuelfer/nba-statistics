@@ -9,7 +9,9 @@ import controllers.ControllerEquipe;
 import controllers.ControllerEstatistica;
 import controllers.ControllerJogador;
 import controllers.ControllerPartida;
+import java.text.ParseException;
 import java.util.ArrayList;
+import javax.swing.text.MaskFormatter;
 import models.Equipe;
 import models.EstatisticaJogador;
 import models.Jogador;
@@ -26,9 +28,10 @@ public class TelaCadastrarEstatisticaJogador extends javax.swing.JInternalFrame 
     /**
      * Creates new form TelaCadastrarParida
      */
-    public TelaCadastrarEstatisticaJogador(MainFrame desktop) {
+    public TelaCadastrarEstatisticaJogador(MainFrame desktop){
         initComponents();
         this.desktop = desktop;
+        
 
     }
 
@@ -40,13 +43,11 @@ public class TelaCadastrarEstatisticaJogador extends javax.swing.JInternalFrame 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnCadastrarEstatisticaJogador = new javax.swing.JButton();
         cmbPartida = new javax.swing.JComboBox<>();
-        txtDataPartida = new javax.swing.JFormattedTextField();
         btnBuscarPartida = new javax.swing.JButton();
         cmbJogador = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
@@ -62,34 +63,20 @@ public class TelaCadastrarEstatisticaJogador extends javax.swing.JInternalFrame 
         spnTocos = new javax.swing.JSpinner();
         jLabel12 = new javax.swing.JLabel();
         spnTurnovers = new javax.swing.JSpinner();
+        txtDataPartida = new javax.swing.JTextField();
 
         setClosable(true);
         setMaximizable(true);
         setResizable(true);
         setTitle("Cadastrar Estatística do Jogador");
-        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("Patida");
         jLabel1.setAlignmentX(0.5F);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 71, 0, 0);
-        getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setText("Data da Partida");
         jLabel3.setAlignmentX(0.5F);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 71, 0, 0);
-        getContentPane().add(jLabel3, gridBagConstraints);
 
         btnCadastrarEstatisticaJogador.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnCadastrarEstatisticaJogador.setText("Cadastrar");
@@ -98,38 +85,12 @@ public class TelaCadastrarEstatisticaJogador extends javax.swing.JInternalFrame 
                 btnCadastrarEstatisticaJogadorActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 15;
-        gridBagConstraints.gridy = 19;
-        gridBagConstraints.gridwidth = 34;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 40, 18, 74);
-        getContentPane().add(btnCadastrarEstatisticaJogador, gridBagConstraints);
 
         cmbPartida.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cmbPartidaItemStateChanged(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 41;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 145;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 4, 0, 74);
-        getContentPane().add(cmbPartida, gridBagConstraints);
-
-        txtDataPartida.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 16;
-        gridBagConstraints.ipadx = 175;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 71, 0, 0);
-        getContentPane().add(txtDataPartida, gridBagConstraints);
 
         btnBuscarPartida.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnBuscarPartida.setText("Buscar");
@@ -138,173 +99,173 @@ public class TelaCadastrarEstatisticaJogador extends javax.swing.JInternalFrame 
                 btnBuscarPartidaActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 31;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 18;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 74);
-        getContentPane().add(btnBuscarPartida, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 41;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 145;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 4, 0, 74);
-        getContentPane().add(cmbJogador, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel6.setText("Jogador");
         jLabel6.setAlignmentX(0.5F);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 71, 0, 0);
-        getContentPane().add(jLabel6, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel7.setText("Pontos");
         jLabel7.setAlignmentX(0.5F);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 71, 0, 0);
-        getContentPane().add(jLabel7, gridBagConstraints);
 
         spnPontos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 15;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 17;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = -2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(22, 34, 0, 0);
-        getContentPane().add(spnPontos, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel8.setText("Rebotes");
         jLabel8.setAlignmentX(0.5F);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 71, 0, 0);
-        getContentPane().add(jLabel8, gridBagConstraints);
 
         spnRebotes.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 15;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.gridwidth = 17;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = -2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 34, 0, 0);
-        getContentPane().add(spnRebotes, gridBagConstraints);
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel9.setText("Assistencias");
         jLabel9.setAlignmentX(0.5F);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 71, 0, 0);
-        getContentPane().add(jLabel9, gridBagConstraints);
 
         spnAssistencias.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 15;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 17;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = -2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 34, 0, 0);
-        getContentPane().add(spnAssistencias, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel10.setText("Roubadas");
         jLabel10.setAlignmentX(0.5F);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 13;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 71, 0, 0);
-        getContentPane().add(jLabel10, gridBagConstraints);
 
         spnRoubadas.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 15;
-        gridBagConstraints.gridy = 13;
-        gridBagConstraints.gridwidth = 17;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = -2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 34, 0, 0);
-        getContentPane().add(spnRoubadas, gridBagConstraints);
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel11.setText("Tocos");
         jLabel11.setAlignmentX(0.5F);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 15;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 71, 0, 0);
-        getContentPane().add(jLabel11, gridBagConstraints);
 
         spnTocos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 15;
-        gridBagConstraints.gridy = 15;
-        gridBagConstraints.gridwidth = 17;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = -2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 34, 0, 0);
-        getContentPane().add(spnTocos, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel12.setText("Turnovers");
         jLabel12.setAlignmentX(0.5F);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 17;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 71, 0, 0);
-        getContentPane().add(jLabel12, gridBagConstraints);
 
         spnTurnovers.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 15;
-        gridBagConstraints.gridy = 17;
-        gridBagConstraints.gridwidth = 17;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = -2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 34, 0, 0);
-        getContentPane().add(spnTurnovers, gridBagConstraints);
+
+        txtDataPartida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDataPartidaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel6)
+                        .addGap(44, 44, 44)
+                        .addComponent(cmbJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel7)
+                        .addGap(110, 110, 110)
+                        .addComponent(spnPontos, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel8)
+                        .addGap(98, 98, 98)
+                        .addComponent(spnRebotes, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel9)
+                        .addGap(60, 60, 60)
+                        .addComponent(spnAssistencias, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel10)
+                        .addGap(84, 84, 84)
+                        .addComponent(spnRoubadas, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel11)
+                        .addGap(118, 118, 118)
+                        .addComponent(spnTocos, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel12)
+                        .addGap(81, 81, 81)
+                        .addComponent(spnTurnovers, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(btnCadastrarEstatisticaJogador))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtDataPartida)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnBuscarPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(61, 61, 61)
+                                .addComponent(cmbPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(56, 56, 56))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jLabel3)
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDataPartida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarPartida))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(cmbPartida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(cmbJogador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(spnPontos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(spnRebotes, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(spnAssistencias, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(spnRoubadas, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(spnTocos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(spnTurnovers, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(btnCadastrarEstatisticaJogador))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -374,9 +335,12 @@ public class TelaCadastrarEstatisticaJogador extends javax.swing.JInternalFrame 
                 cmbJogador.addItem(j.getNome());
                 this.jogadores.add(j);
             }
-        }
-        
+        }        
     }//GEN-LAST:event_cmbPartidaItemStateChanged
+
+    private void txtDataPartidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataPartidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDataPartidaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -399,6 +363,6 @@ public class TelaCadastrarEstatisticaJogador extends javax.swing.JInternalFrame 
     private javax.swing.JSpinner spnRoubadas;
     private javax.swing.JSpinner spnTocos;
     private javax.swing.JSpinner spnTurnovers;
-    private javax.swing.JFormattedTextField txtDataPartida;
+    private javax.swing.JTextField txtDataPartida;
     // End of variables declaration//GEN-END:variables
 }

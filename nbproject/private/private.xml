@@ -4,9 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/controllers/ControllerEstatistica.java</file>
+            <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/dao/DaoPartida.java</file>
+            <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/dao/DaoEquipe.java</file>
             <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/controllers/ControllerJogador.java</file>
             <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/models/EstatisticaJogador.java</file>
+            <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/views/TelaBuscarEquipe.java</file>
+            <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/controllers/ControllerPartida.java</file>
+            <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/controllers/ControllerEquipe.java</file>
             <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/views/TelaBuscarJogador.java</file>
+            <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/views/MainFrame.java</file>
             <file>file:/C:/Users/emanu/OneDrive/Documentos/NetBeansProjects/NBA/src/dao/DaoEstatistica.java</file>
         </group>
     </open-files>
