@@ -35,14 +35,13 @@ public class DaoJogador {
                 stmt.setString(i, parametros.get(i-1));
             }
             stmt.executeUpdate();
-            
+            return true;
         } catch (SQLException e) { 
             System.out.println(e.getMessage());
             return false;
         } finally {  
             ConnectionFactory.closeConnection(con, stmt);  
         }
-        return true;
     }
     
         public ArrayList<Jogador> get(String comando, ArrayList<String> parametros){

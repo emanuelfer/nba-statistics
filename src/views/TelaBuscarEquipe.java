@@ -419,7 +419,7 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
         txtPartidas.setText(numPartidas.toString());
         txtVitorias.setText(vitorias.toString());
         txtDerrotas.setText(derrotas.toString());
-        txtPontos.setText(String.format("%.2f", mediaPontos));
+        txtPontos.setText(mediaPontos.toString());
         this.changeColor();
     }//GEN-LAST:event_btnBuscarFranquiaActionPerformed
 
@@ -466,13 +466,13 @@ public class TelaBuscarEquipe extends javax.swing.JInternalFrame {
         ArrayList<String> linhas = new ArrayList();
         linha = "Franquia;Cidade;Conferencia;Partidas;Vitorias;Derrotas;Media de pontos";
         linhas.add(linha);
-        if(txtNome.getText() != null){
+        if(!txtNome.getText().equals("None")){
             linha1 = txtNome.getText() +";"+txtCidade.getText()+";"+txtConferencia.getText()
                     +";"+txtPartidas.getText()+";"+txtVitorias.getText()+";"+txtDerrotas.getText()
                     +";"+txtPontos.getText();
             linhas.add(linha1);
         }
-        if(txtNome1.getText() != null){
+        if(!txtNome1.getText().equals("None")){
             linha2 = txtNome1.getText() +";"+txtCidade1.getText()+";"+txtConferencia1.getText()
                     +";"+txtPartidas1.getText()+";"+txtVitorias1.getText()+";"+txtDerrotas1.getText()
                     +";"+txtPontos1.getText();
